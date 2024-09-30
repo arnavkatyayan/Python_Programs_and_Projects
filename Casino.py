@@ -17,4 +17,5 @@ def gameFunction():
 
 name=input("Please enter your name")
 cash=float(input("Please enter the cash"))
+age=int(input("Please enter the age"))
 
