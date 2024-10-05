@@ -39,10 +39,19 @@ class Bank:
         print("\nBank Operations")
         print("1) Deposit")
         print("2) Withdraw")
-        print("3) Show")
-        print("4) Exit")
+        print("3) Show Balance")
+        print("4) Transfer Money")
+        print("5) Exit")
         num = int(input("Enter a number from 1 to 4: "))
         return num
+
+    def transfer_money(self,reciever,bal):
+        if self.balance>bal:
+            print("Money Transferred")
+            self.balance = self.balance-bal
+        else:
+            print("Not enough money, Deposit first!")
+            return
 
 
 # Welcome message and name input
@@ -71,7 +80,13 @@ while True:
     elif n == 3:
         bank_account.show()
 
-    elif n==4:
+    elif n == 4:
+        reciever = input("Please enter the name of the receiver: ")
+        bal = float(input("Please enter how much you want to transfer: "))
+        bank_account.transfer_money(reciever, bal)
+
+        
+    elif n==5:
         bank_account.exit()
 
     else:
